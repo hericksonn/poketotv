@@ -1,0 +1,89 @@
+.loading-container {
+    box-sizing: border-box;
+    display: block;
+    transition: .45s all;
+    padding: 5px;
+    width: 200px;
+    position: relative;
+    font-family: monospace;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: auto;
+}
+
+.loading-inner {
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    position: relative;
+    border: 1px solid;
+    overflow: hidden;
+}
+
+.loading-inside {
+    height: 100%;
+    width: 0%;
+}
+
+.loading-container:hover {
+    filter: brightness(.8);
+}
+
+.loading-container, .loading-label { margin-bottom: 5px; }
+
+.loading-primary .loading-label { color: #2a75bb;  }
+.loading-primary .loading-inner { background-color: #b2cae0; border-color: #b2cae0; }
+.loading-primary .loading-inside { background-color: #2a75bb; }
+
+.loading-2 .loading-label { color: #c7a008; }
+.loading-2 .loading-inner { background-color: #fade6e; border-color: #fade6e; }
+.loading-2 .loading-inside { background-color: #c7a008; }
+
+.loading-3 .loading-label { color: #08c738; }
+.loading-3 .loading-inner { background-color: #6af18c; border-color: #6af18c; }
+.loading-3 .loading-inside { background-color: #08c738; }
+
+.loading-4 .loading-label { color: #08bac7; }
+.loading-4 .loading-inner { background-color: #6af1f1; border-color: #6af1f1; }
+.loading-4 .loading-inside { background-color: #08bac7; }
+
+.loading-5 .loading-label { color: #c70887; }
+.loading-5 .loading-inner { background-color: #e16af1; border-color: #e16af1; }
+.loading-5 .loading-inside { background-color: #c70887; }
+
+.loading-6 .loading-label { color: #c70808; }
+.loading-6 .loading-inner { background-color: #f16a6a; border-color: #f16a6a; }
+.loading-6 .loading-inside { background-color: #c70808; }
+
+
+.loading-circle { text-align: center; padding: 15px; display: inline-block; overflow: hidden; }
+
+.loading-circle, .loading-circle .loading-inner, .loading-circle .loading-inside {
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.loading-circle .loading-inner, .loading-circle .loading-inside {
+    border-radius: 50%;
+}
+
+.loading-circle .loading-label {
+    text-transform: uppercase;
+}
+
+.loading-circle .loading-inner {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.loading-circle .loading-inside {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+}

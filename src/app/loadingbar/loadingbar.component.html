@@ -1,0 +1,15 @@
+<div class="loading-container" [class]="[color]" *ngIf="type=='line'">
+    <div class="loading-label">{{ label }} ({{ percent }}%)</div>
+    <div class="loading-inner">
+        <div class="loading-inside" [style.width]="percent+'%'"></div>
+    </div>
+</div>
+
+<div class="loading-circle" [class]="[color]" *ngIf="type=='circle'">
+    <div class="loading-label">{{ label }}</div>
+    <div class="loading-inner">
+        <div class="loading-inside" [style.width]="percent+'%'" [style.height]="percent+'%'">
+            {{ percent }}%
+        </div>
+    </div>
+</div>

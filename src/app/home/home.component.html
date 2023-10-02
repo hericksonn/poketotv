@@ -1,0 +1,18 @@
+<mat-form-field class="poke-search">
+    <mat-label>Search</mat-label>
+    <input matInput type="text" [(ngModel)]="SearchService.search" (input)="changeOutput()">
+    <button *ngIf="SearchService.search" matSuffix mat-icon-button aria-label="Clear" (click)="SearchService.search='';changeOutput()">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-form-field>
+
+<div class="poke-list">
+    <div class="poke-container" *ngFor="let item of SearchService.actual | slice:0:100; let i=index; trackBy: trackItem" (click)="choosePokemon(item)">
+        <h3 class="poke-title" [class]="setTitleSize(item.name)">{{ item.name }}</h3>
+        <div class="poke-card"></div>
+        <img [src]="SearchService.endpoints.sprite.replace('[ID]',item.id)" class="poke-image cover"/>
+        <img [src]="SearchService.endpoints.sprite.replace('[ID]',item.id)" class="poke-image"/>
+    </div>
+</div>
+
+<div class="curtain" [class]="curtain ? 'show' : ''"></div>

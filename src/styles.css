@@ -1,0 +1,130 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.loading-screen {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    background-color: #00000085;
+    z-index: 999;
+    display: grid;
+    place-items: center;
+}
+
+.loading-screen.hidden {
+    display: none;
+    animation: fadeOut 1.5s;
+}
+
+.loading-screen.hidden .pokeball {
+    animation: ballOut 1s;
+    opacity: 0;
+}
+
+.pokeball {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 12px solid;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: #fff;   
+}
+
+.pokeball > div {
+    position: absolute;
+    display: block;
+    top: calc(-50% - 20px);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #d43232;
+    border-top: 16px solid;
+    border-bottom: 12px solid;
+}
+
+.pokeball > div::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    z-index: 1;
+    border-radius: 50%;
+    margin: auto;
+    bottom: -32px;
+    left: 0;
+    right: 0;
+    border: 12px solid;
+}
+
+.pokeball.animated > div {
+    animation: pokeballOne 2s infinite;
+}
+
+.pokeball.small {
+    width: 70px;
+    height: 70px;
+    border: 6px solid;
+}
+
+.pokeball.small > div {
+    border-top: 8px solid;
+    border-bottom: 6px solid;
+}
+
+.pokeball.small > div::after {
+    width: 15px;
+    height: 15px;
+    bottom: -15px;
+    border: 6px solid;
+}
+
+body, .bg-stripes {
+    background-image: repeating-linear-gradient(
+        -55deg,
+        #3c5aa6 1px,
+        #2a75bb 2px,
+        #2a75bb 11px,
+        #3c5aa6 12px,
+        #3c5aa6 20px
+	);
+    background-size: 200% 200%;
+    background-attachment: fixed;
+    transition: .45s all;
+}
+
+.bg-stripes.animated {
+    animation: barberpole 2s linear infinite;
+}
+
+@keyframes barberpole {
+    100% { background-position: 46px 0; }
+}
+
+@keyframes pokeballOne {
+    0% { top: calc(-50% - 20px); opacity: 1; }
+    24% { top: calc(-50% - 20px); opacity: 1; transform: scale(1); }
+    50% { top: 110%; opacity: 1; transform: scale(1.15); }
+    70% { top: 200%; opacity: 1; transform: scale(2); }
+}
+
+@keyframes fadeOut {
+    0%, 49% { opacity: 1; display: grid; }
+    85% { opacity: 0; display: grid; }
+    100% { opacity: 0; display: none; }
+}
+
+@keyframes ballOut {
+    0% { opacity: 1; }
+    20% { transform: translate3d(0, 10px, 0) scaleY(0.985);  opacity: 1; }
+    40%, 45% { opacity: 1; transform: translate3d(0, -20px, 0) scaleY(0.9); }
+    to { opacity: 0; transform: translate3d(0, 2000px, 0) scaleY(3); }
+}

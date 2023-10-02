@@ -1,0 +1,28 @@
+<div class="curtain">
+    <button mat-button (click)="back()"><mat-icon fontIcon="undo"></mat-icon>Back</button>
+    
+    <mat-card class="fade-detail">
+        <mat-card-content>
+            <div class="poke-title">{{ info.name }}</div>
+            <div class="badge-container">
+                <span class="poke-badge" *ngFor="let t of info.types">{{ t.type.name }}</span>
+            </div>
+            
+            <div class="info-content">
+                <div><img [src]="image" class="detail-image" /></div>
+
+                <div>
+                    <app-loadingbar [label]="info.stats[0].stat.name" [percent]="info.stats[0].base_stat" color="loading-6" />
+                    <app-loadingbar [label]="info.stats[1].stat.name" [percent]="info.stats[1].base_stat" color="loading-2" />
+                    <app-loadingbar [label]="info.stats[2].stat.name" [percent]="info.stats[2].base_stat" color="loading-3" />
+                </div>
+
+                <div>
+                    <app-loadingbar type="circle" [label]="info.stats[3].stat.name" [percent]="info.stats[3].base_stat" color="loading-5" />
+                    <app-loadingbar type="circle" [label]="info.stats[4].stat.name" [percent]="info.stats[4].base_stat" color="loading-4" />
+                    <app-loadingbar type="circle" [label]="info.stats[5].stat.name" [percent]="info.stats[5].base_stat" />
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

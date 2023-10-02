@@ -1,0 +1,60 @@
+.curtain { background-color: #ddd; width: 100%; height: 100vh; padding: 15px; }
+
+.curtain, .curtain * { box-sizing: border-box; }
+
+.detail-image {
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+    position: relative;
+}
+
+.info-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fade-detail {
+    animation: fadeDetail ease-in-out 1s;
+}
+
+.poke-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffcb05;
+    text-shadow: 2px 2px 2px #2a75bb;
+    outline: 1px #c7a008;
+    font-family: monospace;
+    text-transform: uppercase;
+    transition: .45s all;
+    text-align: center;
+}
+
+.badge-container {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.poke-badge {
+    background-color: #2a75bb;
+    color: #ffffff95;
+    border-radius: 5px;
+    padding: 5px;
+    margin: auto 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+@keyframes fadeDetail {
+    0% { transform: translateY(-1200px) scale(0.7); opacity: 0.7; }
+    80% { transform: translateY(0px) scale(0.7); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 748px) {
+    .info-content {
+        display: block;
+        text-align: center;
+    }
+}
